@@ -1,0 +1,36 @@
+ #ifndef BUFFER_H
+ #define BUFFER_H
+
+#include "estructuras.h"
+
+////////////////////////////////////////////////////////////////////////////
+//////////////          Limpiar buffers, dejar variables en 0       ////////
+////////////////////////////////////////////////////////////////////////////
+
+bufferIFID* ifidEnCero(bufferIFID* bII);
+
+bufferIDEX* idexEnCero(bufferIDEX* bIE);
+
+bufferEXMEM* exmenEnCero(bufferEXMEM* bEM);
+
+bufferMEMWB* memwbEnCero(bufferMEMWB* bMW);
+
+////////////////////////////////////////////////////////////////////////////
+//////////////                detector de hazards           ////////////////
+////////////////////////////////////////////////////////////////////////////
+
+bufferIDEX* detectarHazard(bufferIDEX* bIE, bufferEXMEM* bEM, bufferMEMWB* bMW);
+
+int espera(bufferIDEX* bIE, bufferEXMEM* bEM);
+
+////////////////////////////////////////////////////////////////////////////
+//////////////            Imprimir buffer por archivo       ////////////////
+////////////////////////////////////////////////////////////////////////////
+
+//inprimir buffers en un archivo .html
+void ImprimirBuffers(char* archivo , int ciclo, bufferIFID* bII, bufferIDEX* bIE,bufferEXMEM* bEM ,bufferMEMWB* bMW);
+
+//cerrar la </tabla> del archivo html
+void finImpresionBuffers(char* archivo);
+
+#endif /* BUFFER_H */
